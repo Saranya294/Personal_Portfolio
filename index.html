@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Saranya showcasing skills and projects.">
+    <title>Saranya's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navibar">
+        <div class="logo">
+            <img src="Images/logo.png" width="100px" alt="Saranya's Portfolio Logo">
+        </div>
+        <nav>
+            <ul id="menuitems"> 
+                <li><a class="btn" href="#home">Home</a></li>
+                <li><a class="btn" href="#about">About</a></li>
+                <li><a class="btn" href="#skills">Skills</a></li>
+                <li><a class="btn" href="#projects">Projects</a></li>
+                <li><a class="btn" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <img src="Images/menu-button.png" alt="Menu button" class="menuicon" onclick="toggleMenu()">
+    </header>
+
+    <div class="slider-container">
+       
+      
+        <div class="slider">
+            <!-- Home Slide -->
+            <div id="home" class="slide">
+                <img src="Images/business.png" alt="image" >
+              
+                <div class="slide-content">
+                    
+                    <h2>Hi, </h2>
+                    <h2>I'm <label for="">Saranya</label></h2>
+                    <p>Frontend Developer</p>
+                </div>
+                <div class="slide-nav">
+                    <button class="arrow left" onclick="moveSlide(-1)">&#8592;</button>
+                    <button class="arrow right" onclick="moveSlide(1)">&#8594;</button>
+                </div>
+            </div>
+
+            <!-- About Slide -->
+            <div id="about" class="slide">
+                <img src="Images/aboutme.png" alt="About Image" class="slide-image">
+                <div class="slide-content">
+                    <h2>About</h2>
+                   
+                    <p>I am a Frontend Developer with a passion for creating simple and attractive websites. My goal is to make websites easy to use and enjoyable for everyone.</p>
+                    
+                </div>
+                <div class="slide-nav">
+                    <button class="arrow left" onclick="moveSlide(-1)">&#8592;</button>
+                    <button class="arrow right" onclick="moveSlide(1)">&#8594;</button>
+                </div>
+            </div>
+
+            <!-- Skills Slide -->
+            <div id="skills" class="slide">
+                <img src="Images/skills.png" alt="Skills Image" class="slide-image">
+                <div class="slide-content">
+                    <h2>Skills</h2><br>
+                 
+                    <p>HTML</p><br>
+                    <p>CSS</p><br>
+                    <p>Javascript</p><br>
+                    <p>Python</p><br>
+                </div>
+                <div class="slide-nav">
+                    <button class="arrow left" onclick="moveSlide(-1)">&#8592;</button>
+                    <button class="arrow right" onclick="moveSlide(1)">&#8594;</button>
+                </div>
+            </div>
+
+            <!-- Projects Slide -->
+            <div id="projects" class="slide">
+                <img src="Images/project.png" alt="Projects Image" class="slide-image">
+                
+                <div class="slide-content">
+                    <h2>Projects</h2><br>
+                  <div class="project-content">
+                    <h4>ChatBot</h4>
+                    <p>Chatbot with Gemini API Integration <br> Built using Python</p>
+                    <a class="v-btn" href="https://doraemonbot-cgeaef2efztqyaj5n86zcg.streamlit.app/">View</a>
+                  </div>
+                  <div class="project-content">
+                    <h4>Real-Time News Portal</h4>
+                    <p>A Python-based web scrapping project <br> fetching live news updates</p>
+                    <a class="v-btn" href="">View</a>
+                </div>
+                </div>
+                <div class="slide-nav">
+                    <button class="arrow left" onclick="moveSlide(-1)">&#8592;</button>
+                    <button class="arrow right" onclick="moveSlide(1)">&#8594;</button>
+                </div>
+            </div>
+
+            <!-- Contact Slide -->
+            <div id="contact" class="slide">
+                <img src="Images/contact.png" alt="Contact Image" class="slide-image">
+                
+                <div class="slide-content">
+                    <h2>Contact</h2>
+                  
+                    
+                    
+                    <p>email:saranyasubiramani29@gmail.com</p>
+                    <p>mobile:+91 6381020242</p>
+   
+                </div>
+                <div class="slide-nav">
+                    <button class="arrow left" onclick="moveSlide(-1)">&#8592;</button>
+                    <button class="arrow right" onclick="moveSlide(1)">&#8594;</button>
+                </div>
+                <footer>@2024 Saranya.All rights reserved.</footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
