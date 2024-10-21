@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const menuItems = document.getElementById('menuitems');
     const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let isMouseDown = false;
+    let mouseStartX = 0;
+    let mouseEndX = 0;
 
     // Toggle mobile menu
     if (menuIcon && menuItems) {
@@ -35,6 +40,61 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         updateSlider();
     }
+
+    // Swipe functionality for touch devices
+    function handleTouchStart(event) {
+        touchStartX = event.changedTouches[0].screenX;
+    }
+
+    function handleTouchMove(event) {
+        touchEndX = event.changedTouches[0].screenX;
+    }
+
+    function handleTouchEnd() {
+        if (touchEndX < touchStartX) {
+            moveSlide(1); // Swipe left, move to next slide
+        } else if (touchEndX > touchStartX) {
+            moveSlide(-1); // Swipe right, move to previous slide
+        }
+    }
+
+    // Swipe functionality for mouse (left-click + drag)
+    function handleMouseDown(event) {
+        if (event.button === 0) { // Check if left mouse button is pressed
+            isMouseDown = true;
+            mouseStartX = event.clientX;
+        }
+    }
+
+    function handleMouseMove(event) {
+        if (isMouseDown) {
+            mouseEndX = event.clientX;
+        }
+    }
+
+    function handleMouseUp() {
+        if (isMouseDown) {
+            if (mouseEndX < mouseStartX) {
+                moveSlide(1); // Drag left, move to next slide
+            } else if (mouseEndX > mouseStartX) {
+                moveSlide(-1); // Drag right, move to previous slide
+            }
+            isMouseDown = false;
+        }
+    }
+
+    // Two-finger swipe on touchpad is usually handled natively by most modern browsers
+    // and will already trigger the 'touch' events.
+
+    // Add event listeners for touch
+    document.querySelector('.slider-container').addEventListener('touchstart', handleTouchStart);
+    document.querySelector('.slider-container').addEventListener('touchmove', handleTouchMove);
+    document.querySelector('.slider-container').addEventListener('touchend', handleTouchEnd);
+
+    // Add event listeners for mouse (left-click + drag)
+    document.querySelector('.slider-container').addEventListener('mousedown', handleMouseDown);
+    document.querySelector('.slider-container').addEventListener('mousemove', handleMouseMove);
+    document.querySelector('.slider-container').addEventListener('mouseup', handleMouseUp);
 
     // Add click event listeners to menu items
     document.querySelectorAll('#menuitems .btn').forEach((menuItem, index) => {
