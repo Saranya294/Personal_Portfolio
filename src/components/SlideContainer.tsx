@@ -58,7 +58,7 @@ const SlideContainer: React.FC<SlideContainerProps> = ({
   const currentSlideData = slides[currentSlide];
 
   return (
-    <div className="relative w-full h-screen overflow-hidden" ref={constraintsRef}>
+    <div className="relative w-full h-screen overflow-hidden pt-16 sm:pt-20" ref={constraintsRef}>
       <AnimatePresence initial={false} custom={direction} mode="wait">
         <motion.div
           key={currentSlide}
@@ -80,10 +80,10 @@ const SlideContainer: React.FC<SlideContainerProps> = ({
           className="absolute inset-0 flex items-center justify-center cursor-grab active:cursor-grabbing"
           style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
         >
-          <div className="w-full h-full flex flex-col lg:flex-row items-center justify-center px-6 lg:px-12 gap-8 lg:gap-16">
+          <div className="w-full h-full flex flex-col xl:flex-row items-center justify-center px-4 sm:px-6 lg:px-8 xl:px-12 gap-4 sm:gap-6 lg:gap-8 xl:gap-16 py-4 sm:py-6 lg:py-8">
             {/* Image Section */}
             <motion.div 
-              className="flex-1 flex justify-center items-center max-w-md lg:max-w-lg"
+              className="flex-1 flex justify-center items-center w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl order-1 xl:order-none"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -91,7 +91,7 @@ const SlideContainer: React.FC<SlideContainerProps> = ({
               <motion.img
                 src={currentSlideData.image}
                 alt={currentSlideData.title}
-                className="w-full h-auto max-h-96 object-contain animate-float"
+                className="w-full h-auto max-h-48 sm:max-h-64 md:max-h-80 lg:max-h-96 object-contain animate-float"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               />
@@ -99,12 +99,12 @@ const SlideContainer: React.FC<SlideContainerProps> = ({
 
             {/* Content Section */}
             <motion.div 
-              className="flex-1 max-w-2xl"
+              className="flex-1 w-full max-w-full xl:max-w-2xl order-2 xl:order-none"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              <div className="glass-effect rounded-2xl p-8 lg:p-12 text-center lg:text-left">
+              <div className="glass-effect rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 xl:p-12 text-center xl:text-left h-full overflow-y-auto max-h-[60vh] xl:max-h-none">
                 {currentSlideData.component}
               </div>
             </motion.div>
@@ -112,34 +112,34 @@ const SlideContainer: React.FC<SlideContainerProps> = ({
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Arrows */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4 z-10">
+      {/* Navigation Arrows - Hidden on small screens */}
+      <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 sm:space-x-4 z-10">
         <motion.button
           onClick={() => moveSlide(-1)}
-          className="p-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-300"
+          className="p-2 sm:p-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-300"
           whileHover={{ scale: 1.1, backgroundColor: 'rgba(59, 130, 246, 0.1)' }}
           whileTap={{ scale: 0.9 }}
         >
-          <ChevronLeft className="w-6 h-6 text-primary-600" />
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" />
         </motion.button>
         
         <motion.button
           onClick={() => moveSlide(1)}
-          className="p-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-300"
+          className="p-2 sm:p-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-300"
           whileHover={{ scale: 1.1, backgroundColor: 'rgba(59, 130, 246, 0.1)' }}
           whileTap={{ scale: 0.9 }}
         >
-          <ChevronRight className="w-6 h-6 text-primary-600" />
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" />
         </motion.button>
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+      <div className="absolute bottom-16 sm:bottom-20 lg:bottom-24 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
         {slides.map((_, index) => (
           <motion.button
             key={index}
             onClick={() => moveSlide(index - currentSlide)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
               index === currentSlide 
                 ? 'bg-primary-500 scale-125' 
                 : 'bg-white/50 hover:bg-white/80'
