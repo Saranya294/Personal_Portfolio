@@ -112,29 +112,34 @@ const SlideContainer: React.FC<SlideContainerProps> = ({
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Arrows - Hidden on small screens */}
-      <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 sm:space-x-4 z-10">
-        <motion.button
-          onClick={() => moveSlide(-1)}
-          className="p-2 sm:p-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-300"
-          whileHover={{ scale: 1.1, backgroundColor: 'rgba(59, 130, 246, 0.1)' }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" />
-        </motion.button>
-        
-        <motion.button
-          onClick={() => moveSlide(1)}
-          className="p-2 sm:p-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-300"
-          whileHover={{ scale: 1.1, backgroundColor: 'rgba(59, 130, 246, 0.1)' }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" />
-        </motion.button>
-      </div>
+      {/* Left Navigation Arrow */}
+      <motion.button
+        onClick={() => moveSlide(-1)}
+        className="absolute left-2 sm:left-4 lg:left-6 top-1/2 transform -translate-y-1/2 p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-300 z-10"
+        whileHover={{ scale: 1.1, backgroundColor: 'rgba(59, 130, 246, 0.1)', x: -5 }}
+        whileTap={{ scale: 0.9 }}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+      >
+        <ChevronLeft className="w-6 h-6 sm:w-7 sm:h-7 text-primary-600" />
+      </motion.button>
+
+      {/* Right Navigation Arrow */}
+      <motion.button
+        onClick={() => moveSlide(1)}
+        className="absolute right-2 sm:right-4 lg:right-6 top-1/2 transform -translate-y-1/2 p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-300 z-10"
+        whileHover={{ scale: 1.1, backgroundColor: 'rgba(59, 130, 246, 0.1)', x: 5 }}
+        whileTap={{ scale: 0.9 }}
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+      >
+        <ChevronRight className="w-6 h-6 sm:w-7 sm:h-7 text-primary-600" />
+      </motion.button>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-16 sm:bottom-20 lg:bottom-24 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+      <div className="absolute bottom-8 sm:bottom-12 lg:bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
         {slides.map((_, index) => (
           <motion.button
             key={index}
