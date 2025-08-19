@@ -8,7 +8,17 @@ export default {
     extend: {
       screens: {
         'xs': '475px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
         '3xl': '1600px',
+        '4xl': '1920px',
+        // Height-based breakpoints
+        'h-sm': { 'raw': '(max-height: 640px)' },
+        'h-md': { 'raw': '(max-height: 768px)' },
+        'h-lg': { 'raw': '(min-height: 900px)' },
       },
       colors: {
         primary: {
