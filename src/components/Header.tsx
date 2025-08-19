@@ -22,26 +22,26 @@ const Header: React.FC<HeaderProps> = ({ currentSlide, goToSlide, totalSlides })
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 z-50 glass-effect"
     >
-      <div className="flex justify-between items-center px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+      <div className="flex justify-between items-center px-2 xxs:px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 py-2 xxs:py-3 xs:py-4 sm:py-5">
         {/* Logo */}
         <motion.div 
           className="flex items-center space-x-2"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-sm sm:text-lg">S</span>
+          <div className="w-6 h-6 xxs:w-7 xxs:h-7 xs:w-8 xs:h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
+            <span className="text-white font-bold text-xs xxs:text-sm xs:text-base sm:text-lg md:text-xl">S</span>
           </div>
-          <span className="font-caveat text-xl sm:text-2xl font-bold gradient-text">Saranya</span>
+          <span className="font-caveat text-lg xxs:text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold gradient-text">Saranya</span>
         </motion.div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-1">
+        <nav className="hidden lg:flex space-x-1 xl:space-x-2">
           {menuItems.map((item, index) => (
             <motion.button
               key={item}
               onClick={() => goToSlide(index)}
-              className={`px-3 lg:px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm lg:text-base ${
+              className={`px-2 lg:px-3 xl:px-4 py-2 rounded-lg font-medium transition-all duration-300 text-xs lg:text-sm xl:text-base 2xl:text-lg ${
                 currentSlide === index
                   ? 'bg-primary-500 text-white shadow-lg'
                   : 'text-gray-700 hover:bg-primary-50 hover:text-primary-600'
@@ -56,11 +56,11 @@ const Header: React.FC<HeaderProps> = ({ currentSlide, goToSlide, totalSlides })
 
         {/* Mobile Menu Button */}
         <motion.button
-          className="md:hidden p-2 rounded-lg hover:bg-primary-50"
+          className="lg:hidden p-1 xxs:p-2 rounded-lg hover:bg-primary-50"
           onClick={toggleMenu}
           whileTap={{ scale: 0.95 }}
         >
-          {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          {isMenuOpen ? <X className="w-4 h-4 xxs:w-5 xxs:h-5 xs:w-6 xs:h-6" /> : <Menu className="w-4 h-4 xxs:w-5 xxs:h-5 xs:w-6 xs:h-6" />}
         </motion.button>
       </div>
 
@@ -69,9 +69,9 @@ const Header: React.FC<HeaderProps> = ({ currentSlide, goToSlide, totalSlides })
         initial={false}
         animate={{ height: isMenuOpen ? 'auto' : 0, opacity: isMenuOpen ? 1 : 0 }}
         transition={{ duration: 0.3 }}
-        className="md:hidden overflow-hidden bg-white/95 backdrop-blur-sm border-t border-white/20"
+        className="lg:hidden overflow-hidden bg-white/95 backdrop-blur-sm border-t border-white/20"
       >
-        <div className="px-4 sm:px-6 py-4 space-y-2">
+        <div className="px-2 xxs:px-3 xs:px-4 sm:px-6 py-2 xxs:py-3 xs:py-4 space-y-1 xxs:space-y-2">
           {menuItems.map((item, index) => (
             <motion.button
               key={item}
@@ -79,7 +79,7 @@ const Header: React.FC<HeaderProps> = ({ currentSlide, goToSlide, totalSlides })
                 goToSlide(index);
                 setIsMenuOpen(false);
               }}
-              className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
+              className={`block w-full text-left px-2 xxs:px-3 xs:px-4 py-2 xxs:py-3 rounded-lg font-medium transition-all duration-300 text-sm xxs:text-base xs:text-lg ${
                 currentSlide === index
                   ? 'bg-primary-500 text-white'
                   : 'text-gray-700 hover:bg-primary-50'

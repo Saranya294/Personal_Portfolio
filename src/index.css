@@ -10,6 +10,8 @@
   
   body {
     @apply font-sans bg-gradient-to-br from-slate-50 to-blue-50 text-gray-900 overflow-hidden;
+    font-size: clamp(14px, 2.5vw, 16px);
+    line-height: 1.6;
   }
   
   html {
@@ -51,19 +53,23 @@
 
   /* Responsive utilities */
   .text-responsive {
-    @apply text-sm sm:text-base md:text-lg lg:text-xl;
+    @apply text-xs xxs:text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl;
   }
 
   .heading-responsive {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+    @apply text-xl xxs:text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
   }
 
   .padding-responsive {
-    @apply p-4 sm:p-6 lg:p-8;
+    @apply p-2 xxs:p-3 xs:p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12;
   }
 
   .margin-responsive {
-    @apply m-4 sm:m-6 lg:m-8;
+    @apply m-2 xxs:m-3 xs:m-4 sm:m-6 md:m-8 lg:m-10 xl:m-12;
+  }
+
+  .container-responsive {
+    @apply max-w-sm xxs:max-w-md xs:max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl;
   }
 }
 
