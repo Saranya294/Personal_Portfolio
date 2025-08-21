@@ -39,14 +39,6 @@
 }
 
 @layer components {
-  .glass-effect {
-    @apply bg-white/90 backdrop-blur-sm border border-gray-200;
-  }
-  
-  .hover-lift {
-    @apply transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg;
-  }
-
   /* Responsive utilities */
   .text-responsive {
     @apply text-xs xxs:text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl;

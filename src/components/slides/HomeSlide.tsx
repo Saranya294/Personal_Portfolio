@@ -4,12 +4,12 @@ import { Sparkles } from 'lucide-react';
 
 const HomeSlide: React.FC = () => {
   return (
-    <div className="space-y-2 xxs:space-y-3 xs:space-y-4 sm:space-y-6 md:space-y-8">
+    <div className="space-y-4 xxs:space-y-6 xs:space-y-8 sm:space-y-10 md:space-y-12">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className="space-y-2 xxs:space-y-3 xs:space-y-4 sm:space-y-6"
+        className="space-y-4 xxs:space-y-6 xs:space-y-8 sm:space-y-10"
       >
         <motion.h1 
           className="text-2xl xxs:text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold leading-tight"
@@ -38,7 +38,7 @@ const HomeSlide: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.6 }}
-        className="space-y-3 xxs:space-y-4 xs:space-y-5 sm:space-y-6 md:space-y-8"
+        className="space-y-4 xxs:space-y-6 xs:space-y-8 sm:space-y-10 md:space-y-12"
       >
         <p className="text-xs xxs:text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-xs xxs:max-w-sm xs:max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl mx-auto lg:mx-0">
           Passionate about transforming raw data into meaningful insights and actionable 
