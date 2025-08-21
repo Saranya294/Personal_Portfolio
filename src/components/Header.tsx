@@ -29,10 +29,10 @@ const Header: React.FC<HeaderProps> = ({ currentSlide, goToSlide, totalSlides })
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          <div className="w-6 h-6 xxs:w-7 xxs:h-7 xs:w-8 xs:h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
+          <div className="w-6 h-6 xxs:w-7 xxs:h-7 xs:w-8 xs:h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
             <span className="text-white font-bold text-xs xxs:text-sm xs:text-base sm:text-lg md:text-xl">S</span>
           </div>
-          <span className="font-caveat text-lg xxs:text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold gradient-text">Saranya</span>
+          <span className="font-caveat text-lg xxs:text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-blue-800">Saranya</span>
         </motion.div>
 
         {/* Desktop Navigation */}
@@ -43,8 +43,8 @@ const Header: React.FC<HeaderProps> = ({ currentSlide, goToSlide, totalSlides })
               onClick={() => goToSlide(index)}
               className={`px-2 lg:px-3 xl:px-4 py-2 rounded-lg font-medium transition-all duration-300 text-xs lg:text-sm xl:text-base 2xl:text-lg ${
                 currentSlide === index
-                  ? 'bg-primary-500 text-white shadow-lg'
-                  : 'text-gray-700 hover:bg-primary-50 hover:text-primary-600'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-gray-800 hover:bg-blue-50 hover:text-blue-700'
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({ currentSlide, goToSlide, totalSlides })
 
         {/* Mobile Menu Button */}
         <motion.button
-          className="lg:hidden p-1 xxs:p-2 rounded-lg hover:bg-primary-50"
+          className="lg:hidden p-1 xxs:p-2 rounded-lg hover:bg-blue-50"
           onClick={toggleMenu}
           whileTap={{ scale: 0.95 }}
         >
@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({ currentSlide, goToSlide, totalSlides })
         initial={false}
         animate={{ height: isMenuOpen ? 'auto' : 0, opacity: isMenuOpen ? 1 : 0 }}
         transition={{ duration: 0.3 }}
-        className="lg:hidden overflow-hidden bg-white/95 backdrop-blur-sm border-t border-white/20"
+        className="lg:hidden overflow-hidden bg-white/95 backdrop-blur-sm border-t border-gray-200"
       >
         <div className="px-2 xxs:px-3 xs:px-4 sm:px-6 py-2 xxs:py-3 xs:py-4 space-y-1 xxs:space-y-2">
           {menuItems.map((item, index) => (
@@ -81,8 +81,8 @@ const Header: React.FC<HeaderProps> = ({ currentSlide, goToSlide, totalSlides })
               }}
               className={`block w-full text-left px-2 xxs:px-3 xs:px-4 py-2 xxs:py-3 rounded-lg font-medium transition-all duration-300 text-sm xxs:text-base xs:text-lg ${
                 currentSlide === index
-                  ? 'bg-primary-500 text-white'
-                  : 'text-gray-700 hover:bg-primary-50'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-gray-800 hover:bg-blue-50'
               }`}
               whileHover={{ x: 5 }}
               whileTap={{ scale: 0.98 }}

@@ -31,10 +31,10 @@ const ContactSlide: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
       >
-        <h2 className="text-2xl xxs:text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold gradient-text mb-2 xxs:mb-3 xs:mb-4 sm:mb-6 md:mb-8">Get In Touch</h2>
+        <h2 className="text-2xl xxs:text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-blue-800 mb-2 xxs:mb-3 xs:mb-4 sm:mb-6 md:mb-8">Get In Touch</h2>
         <p className="text-xs xxs:text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed">
-          I'm always open to discussing new opportunities and interesting projects. 
-          Let's connect and create something amazing together!
+          I'm always open to discussing new data analysis opportunities and challenging projects. 
+          Let's connect and unlock insights from your data together!
         </p>
       </motion.div>
 
@@ -50,7 +50,7 @@ const ContactSlide: React.FC = () => {
             whileHover={{ y: -5, scale: 1.02 }}
           >
             <div className="space-y-2 xxs:space-y-3 xs:space-y-4 sm:space-y-5">
-              <div className="w-8 h-8 xxs:w-10 xxs:h-10 xs:w-12 xs:h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+              <div className="w-8 h-8 xxs:w-10 xxs:h-10 xs:w-12 xs:h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
                 <info.icon className="w-4 h-4 xxs:w-5 xxs:h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
               </div>
               
@@ -70,7 +70,7 @@ const ContactSlide: React.FC = () => {
         className="text-center"
       >
         <motion.button
-          className="bg-gradient-to-r from-primary-500 to-accent-500 text-white px-3 xxs:px-4 xs:px-6 sm:px-8 md:px-10 py-2 xxs:py-2.5 xs:py-3 sm:py-4 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-1 xxs:space-x-2 mx-auto text-xs xxs:text-sm xs:text-base sm:text-lg md:text-xl"
+          className="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-3 xxs:px-4 xs:px-6 sm:px-8 md:px-10 py-2 xxs:py-2.5 xs:py-3 sm:py-4 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-1 xxs:space-x-2 mx-auto text-xs xxs:text-sm xs:text-base sm:text-lg md:text-xl"
           whileHover={{ scale: 1.05, y: -2 }}
           whileTap={{ scale: 0.95 }}
         >

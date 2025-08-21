@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Code, Palette } from 'lucide-react';
+import { TrendingUp, Database, BarChart3 } from 'lucide-react';
 
 const AboutSlide: React.FC = () => {
   const features = [
-    { icon: Code, text: "Clean, efficient code" },
-    { icon: Palette, text: "Beautiful designs" },
-    { icon: Heart, text: "User-centered approach" }
+    { icon: Database, text: "Data Processing" },
+    { icon: BarChart3, text: "Statistical Analysis" },
+    { icon: TrendingUp, text: "Business Intelligence" }
   ];
 
   return (
@@ -16,7 +16,7 @@ const AboutSlide: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
       >
-        <h2 className="text-2xl xxs:text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold gradient-text mb-2 xxs:mb-3 xs:mb-4 sm:mb-6 md:mb-8">About Me</h2>
+        <h2 className="text-2xl xxs:text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-blue-800 mb-2 xxs:mb-3 xs:mb-4 sm:mb-6 md:mb-8">About Me</h2>
         
         <div className="space-y-2 xxs:space-y-3 xs:space-y-4 sm:space-y-6 md:space-y-8">
           <motion.p 
@@ -25,8 +25,8 @@ const AboutSlide: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            I am a Frontend Developer with a passion for creating simple and attractive websites. 
-            My goal is to make websites easy to use and enjoyable for everyone.
+            I am a Data Analyst with a passion for uncovering insights from complex datasets. 
+            My goal is to transform raw data into clear, actionable business intelligence.
           </motion.p>
           
           <motion.p 
@@ -35,8 +35,8 @@ const AboutSlide: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            I believe in the power of good design and clean code to solve real-world problems 
-            and create meaningful digital experiences.
+            I believe in the power of data-driven decision making to solve complex business problems 
+            and drive organizational growth through analytical insights.
           </motion.p>
         </div>
       </motion.div>
@@ -50,12 +50,12 @@ const AboutSlide: React.FC = () => {
         {features.map((feature, index) => (
           <motion.div
             key={index}
-            className="flex items-center space-x-2 xxs:space-x-3 p-2 xxs:p-3 xs:p-4 sm:p-5 md:p-6 bg-gradient-to-r from-primary-50 to-accent-50 rounded-md xxs:rounded-lg"
-            whileHover={{ scale: 1.05, backgroundColor: 'rgba(59, 130, 246, 0.1)' }}
+            className="flex items-center space-x-2 xxs:space-x-3 p-2 xxs:p-3 xs:p-4 sm:p-5 md:p-6 bg-gradient-to-r from-blue-50 to-blue-100 rounded-md xxs:rounded-lg"
+            whileHover={{ scale: 1.05, backgroundColor: 'rgba(37, 99, 235, 0.1)' }}
             transition={{ delay: 1 + index * 0.1, duration: 0.6 }}
           >
-            <feature.icon className="w-4 h-4 xxs:w-5 xxs:h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-primary-500 flex-shrink-0" />
-            <span className="text-gray-700 font-medium text-xs xxs:text-sm xs:text-base sm:text-lg md:text-xl">{feature.text}</span>
+            <feature.icon className="w-4 h-4 xxs:w-5 xxs:h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-blue-600 flex-shrink-0" />
+            <span className="text-gray-800 font-medium text-xs xxs:text-sm xs:text-base sm:text-lg md:text-xl">{feature.text}</span>
           </motion.div>
         ))}
       </motion.div>

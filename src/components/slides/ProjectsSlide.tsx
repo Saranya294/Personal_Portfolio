@@ -5,16 +5,16 @@ import { ExternalLink, Github } from 'lucide-react';
 const ProjectsSlide: React.FC = () => {
   const projects = [
     {
-      title: 'ChatBot',
-      description: 'Chatbot with Gemini API Integration built using Python',
-      technologies: ['Python', 'Gemini API', 'Streamlit'],
-      link: 'https://doraemonbot-cgeaef2efztqyaj5n86zcg.streamlit.app/',
+      title: 'Sales Analytics Dashboard',
+      description: 'Interactive dashboard analyzing sales performance and customer behavior patterns',
+      technologies: ['Python', 'Power BI', 'SQL'],
+      link: '#',
       github: '#'
     },
     {
-      title: 'Real-Time News Portal',
-      description: 'A Python-based web scraping project fetching live news updates',
-      technologies: ['Python', 'Web Scraping', 'APIs'],
+      title: 'Customer Segmentation Analysis',
+      description: 'Machine learning project for customer segmentation using clustering algorithms',
+      technologies: ['Python', 'Pandas', 'Scikit-learn'],
       link: '#',
       github: '#'
     }
@@ -27,7 +27,7 @@ const ProjectsSlide: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
       >
-        <h2 className="text-2xl xxs:text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold gradient-text mb-3 xxs:mb-4 xs:mb-6 sm:mb-8 md:mb-10">Projects</h2>
+        <h2 className="text-2xl xxs:text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-blue-800 mb-3 xxs:mb-4 xs:mb-6 sm:mb-8 md:mb-10">Projects</h2>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 xxs:gap-3 xs:gap-4 sm:gap-6 md:gap-8">
@@ -51,7 +51,7 @@ const ProjectsSlide: React.FC = () => {
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="px-1.5 xxs:px-2 xs:px-3 py-0.5 xxs:py-1 bg-primary-100 text-primary-700 rounded-full text-xs xxs:text-sm xs:text-base font-medium"
+                    className="px-1.5 xxs:px-2 xs:px-3 py-0.5 xxs:py-1 bg-blue-100 text-blue-800 rounded-full text-xs xxs:text-sm xs:text-base font-medium"
                   >
                     {tech}
                   </span>
@@ -63,7 +63,7 @@ const ProjectsSlide: React.FC = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center space-x-1 xxs:space-x-2 bg-gradient-to-r from-primary-500 to-accent-500 text-white px-2 xxs:px-3 xs:px-4 py-1.5 xxs:py-2 rounded-md xxs:rounded-lg font-medium hover:shadow-lg transition-all duration-300 text-xs xxs:text-sm xs:text-base sm:text-lg"
+                  className="flex items-center justify-center space-x-1 xxs:space-x-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white px-2 xxs:px-3 xs:px-4 py-1.5 xxs:py-2 rounded-md xxs:rounded-lg font-medium hover:shadow-lg transition-all duration-300 text-xs xxs:text-sm xs:text-base sm:text-lg"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -75,7 +75,7 @@ const ProjectsSlide: React.FC = () => {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center space-x-1 xxs:space-x-2 border border-gray-300 text-gray-700 px-2 xxs:px-3 xs:px-4 py-1.5 xxs:py-2 rounded-md xxs:rounded-lg font-medium hover:bg-gray-50 transition-all duration-300 text-xs xxs:text-sm xs:text-base sm:text-lg"
+                  className="flex items-center justify-center space-x-1 xxs:space-x-2 border border-gray-300 text-gray-800 px-2 xxs:px-3 xs:px-4 py-1.5 xxs:py-2 rounded-md xxs:rounded-lg font-medium hover:bg-gray-50 transition-all duration-300 text-xs xxs:text-sm xs:text-base sm:text-lg"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

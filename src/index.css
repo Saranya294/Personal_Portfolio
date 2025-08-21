@@ -9,7 +9,7 @@
   }
   
   body {
-    @apply font-sans bg-gradient-to-br from-slate-50 to-blue-50 text-gray-900 overflow-hidden;
+    @apply font-sans bg-gradient-to-br from-white to-blue-50 text-gray-900 overflow-hidden;
     font-size: clamp(14px, 2.5vw, 16px);
     line-height: 1.6;
   }
@@ -39,12 +39,8 @@
 }
 
 @layer components {
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent;
-  }
-  
   .glass-effect {
-    @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-xl;
+    @apply bg-white/90 backdrop-blur-sm border border-gray-200;
   }
   
   .hover-lift {
